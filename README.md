@@ -19,7 +19,7 @@ Este repositorio contiene el análisis detallado del sismo ocurrido el **15 de j
 
 También puedes explorar los datos procesados en la visualización interactiva disponible aquí:  
 
-👉 **[Ver demo visual](https://tu-sitio.github.io)**
+👉 **[Ver demo visual](https://github.com/joelibaceta/sismo-lima-15jun2025)**
 
 ---
 
