@@ -8,7 +8,7 @@ let baselineENZ = 0; // Media de ENZ en la ventana inicial
 // Arreglos por componente y magnitud
 let times = [], M = [], ENE = [], ENN = [], ENZ = [];
 
-let windowMs = 5000;
+let windowMs = 10000;
 let stepMs = 500
 let animationId;                       // para requestAnimationFrame
 const speedFactor = 0.5; 
