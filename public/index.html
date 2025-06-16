@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sismo del 15/06/2025 - Visualizador Interactivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <h1>Así se vivió el sismo desde los datos (15 Junio 2025)</h1>
+  </header>
+
+  <div class="dashboard">
+    <div class="main-section">
+      <div class="main-chart">
+        <div id="mainMagnitude"></div>
+      </div>
+      <div class="timeline">
+        <div id="timeline"></div>
+        <div class="timeline-controls">
+          <button id="playBtn">▶ Play</button>
+          <button id="pauseBtn">⏸ Pause</button>
+          <button id="resetBtn">🔄 Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="side-panel">
+      <h2 id="timer">00:00:00</h2>
+      <div class="ground-container">
+        <div class="interpretation">
+            <p><strong>Latitud y Longitud (º):</strong> -12.18, -77.39 </p>
+            <p><strong>Magnitud:</strong> <span id="currentMag">6.1</span></p> 
+            <p><strong>Profundidad: </strong> <span id="waveType">49 Km</span></p>
+            <p><strong>Intensidad: </strong></strong> IV</p>
+            <small>Provincia Constitucional del Callao</small>
+        </div>
+        <div class="ground-wrapper">
+            <div class="compass">
+                <span class="north">N</span>
+                <span class="south">S</span>
+                <span class="east">E</span>
+                <span class="west">O</span>
+            </div>
+            <div id="ground-horizontal" class="ground-square"></div>
+        </div>
+        <div class="vertical-track">
+            <div class="baseline"></div>
+            <div id="ground-vertical" class="ground-dot"></div>
+        </div>
+
+      </div>
+      <div class="component-charts">
+        <div class="wave-section">
+            <b>Movimiento del suelo</b>
+            <div class="chart-block"><h4>ENE (Este-Noreste)</h4><div id="eneChart"></div></div>
+            <div class="chart-block"><h4>ENN (Norte-Sur)</h4><div id="ennChart"></div></div>
+            <div class="chart-block"><h4>ENZ (Vertical)</h4><div id="enzChart"></div></div>
+        </div>
+        <div class="spectrum-section">
+            <b>Frecuencia del movimiento</b>
+            <div class="chart-block"><h4>√PSD ENE</h4><div id="psdEne"></div></div>
+            <div class="chart-block"><h4>√PSD ENN</h4><div id="psdEnn"></div></div>
+            <div class="chart-block"><h4>√PSD ENZ</h4><div id="psdEnz"></div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+<footer class="footer">
+  <p>
+    Esta visualización se basa en datos reales recolectados por un sensor 
+    <strong>Raspberry Shake 4D</strong>, el cual registra vibraciones del suelo en tres ejes
+    más un canal acústico. El archivo original fue procesado desde un archivo 
+    <code>.mseed</code> proporcionado por el servicio <a href="https://raspberryshake.org" target="_blank" rel="noopener">Raspberry Shake</a>.
+  </p>
+  <p>
+    El código fuente de esta simulación está disponible en 
+    <a href="https://github.com/joelibaceta/sismo-lima-15jun2025" target="_blank" rel="noopener">GitHub</a>. 
+    ¡Explóralo, hazle fork o úsalo en tus propios proyectos educativos o científicos!
+  </p>
+</footer>
+  <script src="main.js"></script>
+</body>
+</html>
